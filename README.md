@@ -48,6 +48,11 @@ Things you may want to cover:
 | image           | string     | null: false                    |
 | product         | string     | null: false                    |
 | description     | text       | null: false                    |
+| category        | string     | null: false                    |
+| condition       | string     | null: false                    |
+| shipping_cost   | string     | null: false                    |
+| shipping_origin | string     | null: false                    |
+| shipping_day    | string     | null: false                    |
 | price           | integer    | null: false                    |
 | user            | references | null: false, foreign_key: true |
 ### Association
@@ -70,6 +75,7 @@ Things you may want to cover:
 | Colum    | Type       | Options                        |
 | -------- | ---------- | -------------------------------|
 | postcode | string     | null: false                    |
+| state    | string     | null: false                    |
 | city     | string     | null: false                    |
 | street   | string     | null: false                    |
 | building | string     |                                |
