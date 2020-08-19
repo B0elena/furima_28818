@@ -36,9 +36,7 @@ Things you may want to cover:
 | f_name      | string   | null: false |
 | l_name_kana | string   | null: false |
 | f_name_kana | string   | null: false |
-| birth_year  | integer  | null: false |
-| birth_month | integer  | null: false |
-| birth_day   | integer  | null: false |
+| birthday    | date     | null: false |
 ### Association
 - has_many :items
 - has_many :buys
@@ -50,13 +48,8 @@ Things you may want to cover:
 | image           | string     | null: false                    |
 | product         | string     | null: false                    |
 | description     | text       | null: false                    |
-| category        | string     | null: false                    |
-| condition       | string     | null: false                    |
-| shipping_cost   | string     | null: false                    |
-| shipping_origin | string     | null: false                    |
-| shipping_day    | string     | null: false                    |
 | price           | integer    | null: false                    |
-| user_id         | references | null: false, foreign_key: true |
+| user            | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :user
 - has_one :buy
@@ -65,12 +58,8 @@ Things you may want to cover:
 
 | Colum      | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
-| cardnumber | integer    | null: false                    |
-| expmonth   | integer    | null: false                    |
-| expyear    | integer    | null: false                    |
-| code       | integer    | null: false                    |
-| user_id    | references | null: false, foreign_key: true |
-| item_id    | references | null: false, foreign_key: true |
+| user       | references | null: false, foreign_key: true |
+| item       | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :user
 - belongs_to :item
@@ -80,12 +69,11 @@ Things you may want to cover:
 
 | Colum    | Type       | Options                        |
 | -------- | ---------- | -------------------------------|
-| postcode | integer    | null: false                    |
-| state    | string     | null: false                    |
+| postcode | string     | null: false                    |
 | city     | string     | null: false                    |
 | street   | string     | null: false                    |
 | building | string     |                                |
-| phone    | integer    | null: false                    |
-| buy_id   | references | null: false, foreign_key: true |
+| phone    | string     | null: false                    |
+| buy      | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :buy
