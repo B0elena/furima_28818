@@ -45,7 +45,6 @@ Things you may want to cover:
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | -------------------------------|
-| image              | string     | null: false                    |
 | product            | string     | null: false                    |
 | description        | text       | null: false                    |
 | category_id        | integer    | null: false                    |
@@ -57,6 +56,7 @@ Things you may want to cover:
 | user               | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :user
+- has_one_attached :image
 - has_one :buy
 
 ## buys テーブル

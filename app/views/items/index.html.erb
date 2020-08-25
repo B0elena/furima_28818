@@ -129,7 +129,7 @@
       <% @items.each do |item| %>
         <li class='list'>
           <%= link_to '#' do %>
-          <%= image_tag "", class: "item-img" %>
+          <%= image_tag item.image, class: "item-img" %>
           <div class='item-info'>
             <h3 class='item-name'>
             <%= item.product %>
