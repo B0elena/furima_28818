@@ -8,10 +8,10 @@ const pay = () => {
     const formData = new FormData(formResult);
 
     const card = {
-      number: formData.get("card-number"),
-      cvc: formData.get("card-cvc"),
-      exp_month: formData.get("card-exp-month"),
-      exp_year: `20${formData.get("card-exp-year")}`,
+      number: formData.get("user_buy[card-number]"),
+      cvc: formData.get("user_buy[card-cvc]"),
+      exp_month: formData.get("user_buy[card-exp-month]"),
+      exp_year: `20${formData.get("user_buy[card-exp-year]")}`,
     };
     
 
@@ -30,6 +30,7 @@ const pay = () => {
         document.getElementById("charge-form").submit();
         document.getElementById("charge-form").reset();
       } else {
+        
       }
     });
   });
