@@ -49,5 +49,10 @@ RSpec.describe UserBuy, type: :model do
       @user_buy.valid?
       expect(@user_buy.errors.full_messages).to include("Phone is invalid")
     end
+    it'tokenが空だと購入できない' do
+      @user_buy.token = ''
+      @user_buy.valid?
+      expect(@user_buy.errors.full_messages).to include("Token can't be blank")
+    end
   end
 end

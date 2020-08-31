@@ -6,7 +6,7 @@ class UserBuy
   with_options presence: true do
     validates :postcode, format: {with: POSTCODE_REGEX}
     validates :phone, format: {with: PHONE_REGEX}
-    validates :postcode, :state_id, :city, :street, :phone
+    validates :postcode, :state_id, :city, :street, :phone, :token
   end
   validates :state_id, numericality: { other_than: 1 }
   def save

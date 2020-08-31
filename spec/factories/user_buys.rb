@@ -6,5 +6,6 @@ FactoryBot.define do
     street   {Faker::Lorem.sentence}
     building {Faker::Lorem.sentence}
     phone    {'09012345678'}
+    token    {Faker::Lorem.sentence}
   end
 end
