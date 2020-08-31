@@ -19,7 +19,7 @@ const pay = () => {
       if (status === 200) {
         const token = response.id;
         const renderDom = document.getElementById("charge-form");
-        const tokenObj = `<input value=${token} type="hidden" name='token'>`;
+        const tokenObj = `<input value=${token} type="hidden" name='user_buy[token]'>`;
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
 
         document.getElementById("card-number").removeAttribute("name");
@@ -30,7 +30,7 @@ const pay = () => {
         document.getElementById("charge-form").submit();
         document.getElementById("charge-form").reset();
       } else {
-        
+        document.getElementById("charge-form").submit();
       }
     });
   });
