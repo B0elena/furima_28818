@@ -11,7 +11,7 @@ class BuysController < ApplicationController
     if @buy.valid?
       pay_item
       @buy.save
-      return redirect_to root_path
+      redirect_to root_path
     else
       render 'index'
     end
@@ -24,12 +24,11 @@ class BuysController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]  #秘密鍵を環境変数で
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']  # 秘密鍵を環境変数で
     Payjp::Charge.create(
       amount: @item.price,
       card: params[:token],
-      currency:'jpy'
+      currency: 'jpy'
     )
   end
-
 end
