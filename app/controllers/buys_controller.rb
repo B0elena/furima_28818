@@ -11,7 +11,7 @@ class BuysController < ApplicationController
     if @buy.valid?
       pay_item
       @buy.save
-      return redirect_to root_path
+      redirect_to root_path
     else
       render 'index'
     end
@@ -20,16 +20,15 @@ class BuysController < ApplicationController
   private
 
   def buy_params
-    params.require(:user_buy).permit(:postcode, :city, :state_id, :street, :building, :phone).merge(user_id: current_user.id, item_id: params[:item_id])
+    params.require(:user_buy).permit(:postcode, :city, :state_id, :street, :building, :phone, :token).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]  #秘密鍵を環境変数で
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']  # 秘密鍵を環境変数で
     Payjp::Charge.create(
       amount: @item.price,
-      card: params[:token],
-      currency:'jpy'
+      card: buy_params[:token],
+      currency: 'jpy'
     )
   end
-
 end

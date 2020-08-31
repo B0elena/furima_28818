@@ -5,8 +5,8 @@ class Item < ApplicationRecord
   validates :image, :product, :description, :category_id, :condition_id, :shipping_cost_id, :shipping_origin_id, :shipping_day_id, :price, presence: true
 
   PRICE_REGEX = /\A[0-9]+\z/.freeze
-  validates :price, format: {with: PRICE_REGEX}
-  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
+  validates :price, format: { with: PRICE_REGEX }
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category
   belongs_to_active_hash :condition
