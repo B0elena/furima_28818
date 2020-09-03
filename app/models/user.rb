@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :items
   has_many :buys
+  has_many :comments
 
   PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/.freeze
   NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
