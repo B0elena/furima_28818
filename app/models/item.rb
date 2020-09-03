@@ -14,4 +14,12 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_origin
   belongs_to_active_hash :shipping_day
   validates :category_id, :condition_id, :shipping_cost_id, :shipping_origin_id, :shipping_day_id, numericality: { other_than: 1 }
+
+  def self.search(search)
+    if search != ""
+      Item.where('product LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 end
