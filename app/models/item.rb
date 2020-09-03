@@ -16,7 +16,7 @@ class Item < ApplicationRecord
   validates :category_id, :condition_id, :shipping_cost_id, :shipping_origin_id, :shipping_day_id, numericality: { other_than: 1 }
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Item.where('product LIKE(?)', "%#{search}%")
     else
       Item.all
