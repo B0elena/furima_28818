@@ -40,6 +40,7 @@ Things you may want to cover:
 ### Association
 - has_many :items
 - has_many :buys
+- has_many :comments
 
 ## items テーブル
 
@@ -58,6 +59,7 @@ Things you may want to cover:
 - belongs_to :user
 - has_one_attached :image
 - has_one :buy
+- has_many :comments
 
 ## buys テーブル
 
@@ -83,6 +85,14 @@ Things you may want to cover:
 | buy      | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :buy
+
+## comments テーブル
+
+| Colum      | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| user       | references | null: false, foreign_key: true |
+| item       | references | null: false, foreign_key: true |
+| text       | text       | null: false                    |
 
 
 ER図
