@@ -148,7 +148,70 @@
   width: 100%;
   font-size: 20px;
   border-radius: 100px;
-  margin-bottom: 2vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  display: flex;
+  justify-content: center;
+}
+
+.user-comment {
+  background-color:#f8f8f8;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1vh;
+}
+
+.user-comment-name {
+  background-color: #5dd2d6;
+  width: 20%;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.user-comment-text {
+  background-color: #4ddfe4;
+  width: 60%;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.buy-comment-none {
+  width: 20%;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.buy-comment {
+  background-color: #f8f8f8;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1vh;
+}
+
+.buyer-comment-name {
+  width: 20%;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.buyer-comment-text {
+  background-color: rgb(66, 224, 119);
+  width: 60%;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.buy-comment-name {
+  background-color: rgb(58, 204, 107);
+  width: 20%;
+  border-radius: 100px;
   display: flex;
   justify-content: center;
 }
@@ -166,6 +229,7 @@
   padding: 10px;
   border: solid 2px #dedede;
   resize: none;
+  margin-top: 1vh;
 }
 
 .comment-warn {
