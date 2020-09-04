@@ -140,6 +140,19 @@
 
 /* /商品の概要 */
 
+.comment-t {
+  line-height: 48px;
+  background-color: #3CCACE;
+  border: 1px solid #3CCACE;
+  color: #fff;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 100px;
+  margin-bottom: 2vh;
+  display: flex;
+  justify-content: center;
+}
+
 .comment-box {
   width: 40vw;
   background-color: #fff;
