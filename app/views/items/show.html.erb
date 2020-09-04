@@ -85,7 +85,16 @@
   <%# /商品の概要 %>
 
   <div>
-    <%= form_with local: true do |f| %>
+    <h4>＜コメント一覧＞</h4>
+    <% if @comments %>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= comment.user.nickname %>：</strong>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    <% end %>
+    <%= form_with(model: [@item, @comment], local: true) do |f| %>
       <%= f.text_area :text, class: "comment-text" %>
 
       <p class="comment-warn">
