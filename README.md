@@ -95,5 +95,6 @@ Things you may want to cover:
 | text       | text       | null: false                    |
 
 
+
 ER図
 https://app.diagrams.net/?rev=0B7ZiCZ_M-QT-NEMyWjZKRVBFVjJyS3J3aks3RnlwbDl0RXpRPQ&chrome=0&nav=1&layers=1&edit=_blank&page=-1#G1lD1qOMntPYC-bIV8h9z8xSoqKTW1NmKQ
