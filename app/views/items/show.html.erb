@@ -114,7 +114,7 @@
       <% end %>
     <% end %>
 
-    <%= form_with(model: [@item, @comment], local: true) do |f| %>
+    <%= form_with(model: [@item, @comment], html:{id: "comment"}, local: true) do |f| %>
       <%= f.text_area :text, class: "comment-text" %>
       <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。
