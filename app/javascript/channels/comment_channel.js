@@ -23,7 +23,12 @@ consumer.subscriptions.create("CommentChannel", {
       </div>`;
     const comments = document.getElementById('comment');
     const newComment = document.getElementById('comment_text');
+    const commentBtn = document.getElementById('commentbtn')
+    console.log(commentBtn)
     comments.insertAdjacentHTML('beforebegin', html);
-    newComment.value='';  
+    newComment.value='';
+    newComment.addEventListener('input', function(){
+      commentBtn.disabled = false;
+    })
   }
 });
