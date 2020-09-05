@@ -1,6 +1,6 @@
 import consumer from "./consumer"
 
-consumer.subscriptions.create("CommentChannel", {
+consumer.subscriptions.create("CommenttChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
   },
@@ -11,19 +11,19 @@ consumer.subscriptions.create("CommentChannel", {
 
   received(data) {
     const html =`
-      <div class="user-comment">
-        <div class="user-comment-name">
-          <strong>${data.user}</strong>
+      <div class="buy-comment">
+        <div class="buyer-comment-name">
         </div>
-        <div class="user-comment-text">
+        <div class="buyer-comment-text">
           ${data.content.text}
         </div>
-        <div class="buy-comment-none">
+        <div class="buy-comment-name">
+          <strong>${data.user}</strong>
         </div>
       </div>`;
     const comments = document.getElementById('comment');
     const newComment = document.getElementById('comment_text');
     comments.insertAdjacentHTML('beforebegin', html);
-    newComment.value='';  
+    newComment.value='';
   }
 });

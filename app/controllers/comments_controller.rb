@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
   end
 
   def new
-    
     @comment = Comment.new
   end
 
@@ -12,8 +11,13 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.save
       @user = current_user.nickname
-      
-      ActionCable.server.broadcast 'comment_channel', content: @comment, user: @user
+      @items = Item.find(params[:item_id])
+      @buyer = @items.user.nickname
+      if @user == @buyer
+        ActionCable.server.broadcast 'comment_channel', content: @comment, user: @user, buyer: @buyer
+      else
+        ActionCable.server.broadcast 'commentt_channel', content: @comment, user: @user, buyer: @buyer
+      end
     end
   end
 
