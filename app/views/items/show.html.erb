@@ -113,17 +113,20 @@
         <% end %>
       <% end %>
     <% end %>
-
-    <%= form_with(model: [@item, @comment], html:{id: "comment"}, local: true) do |f| %>
-      <%= f.text_area :text, class: "comment-text" %>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <% if current_user %>
+    <% if current_user %>
+      <%= form_with(model: [@item, @comment], html:{id: "comment"}, local: true) do |f| %>
+        <%= f.text_area :text, class: "comment-text" %>
+        <p class="comment-warn">
+          相手のことを考え丁寧なコメントを心がけましょう。
+          <br>
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        </p>
         <%= f.submit "コメントする", class:"comment-btn", id:"commentbtn"%>
       <% end %>
+    <% else %>
+      <div class="logincomment">
+        <div>コメントをするにはログインしてください</div>
+      </div>
     <% end %>
   </div>
   <div class="links">

@@ -145,7 +145,7 @@
   background-color: #3CCACE;
   border: 1px solid #3CCACE;
   color: #fff;
-  width: 100%;
+  width: 40vw;
   font-size: 20px;
   border-radius: 100px;
   margin-top: 1vh;
@@ -258,6 +258,19 @@
 
 .comment-flag-icon {
   margin: 10px 5px 0 0;
+}
+
+.logincomment {
+  border-radius: 40px;
+  width: 40vw;
+  min-width: 200px;
+  padding: 1vh 0;
+  margin-top: 15px;
+  color: black;
+  border: 2px solid #2d2d2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .links {
