@@ -71,16 +71,20 @@
         </tr>
       </tbody>
     </table>
+
     <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
-      </div>
+      <%= link_to @item_likes_path do %>
+        <div class="favorite-btn">
+          <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+          <span>いいね 0</span>
+        </div>
+      <% end %>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
         <span>不適切な商品の通報</span>
       </div>
     </div>
+
   </div>
   <%# /商品の概要 %>
 

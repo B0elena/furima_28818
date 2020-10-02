@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :items
   has_many :buys
   has_many :comments
+  has_many :likes
 
   PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/.freeze
   NAME_REGEX = /\A[ぁ-んァ-ン一-龥]/.freeze
